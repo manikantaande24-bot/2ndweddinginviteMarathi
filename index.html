@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>राम आणि सीता यांचे विवाह निमंत्रण</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    background:#3b0d0d;
+    overflow-x:hidden;
+    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
+    color:white;
+}
+/* पार्श्वभूमी */
+.bg{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#6e1c1c 0%,#3b0d0d 70%);
+    z-index:-3;
+}
+.glow{
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(110,28,28,0.25);
+    filter:blur(120px);
+    top:-200px;
+    left:-200px;
+}
+/* सोनेरी कण */
+.particles{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+.particles span{
+    position:absolute;
+    width:4px;
+    height:4px;
+    background:linear-gradient(135deg,#d4af37,#6e1c1c);
+    border-radius:50%;
+    animation:float 10s linear infinite;
+    opacity:0.7;
+}
+@keyframes float{
+    from{ transform:translateY(100vh); }
+    to{ transform:translateY(-120vh); }
+}
+/* मुख्य विभाग */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+.hero-text{
+    max-width:700px;
+    margin-bottom:30px;
+    z-index:2;
+}
+.hero-image{
+    position:relative;
+    width:100%;
+    max-width:900px;
+    border-radius:25px;
+    overflow:hidden;
+    border:3px solid rgba(212,175,55,0.7);
+    box-shadow:
+        0 20px 80px rgba(0,0,0,0.7),
+        0 0 40px rgba(212,175,55,0.25);
+}
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:1;
+}
+.hero-image img{
+    position:relative;
+    z-index:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.6s ease;
+}
+.hero-image:hover img{
+    transform:scale(1.05);
+}
+/* प्रवेशद्वार */
+.door-wrap{
+    position:absolute;
+    inset:0;
+    display:flex;
+    z-index:20;
+    pointer-events:none;
+}
+.door{
+    width:50%;
+    background:linear-gradient(to right,#3b0d0d,#6e1c1c);
+    border:2px solid rgba(212,175,55,0.25);
+    transition: transform 2s ease;
+}
+.left-door{ transform-origin:left; }
+.right-door{ transform-origin:right; }
+.open .left-door{ transform:perspective(1200px) rotateY(-100deg); }
+.open .right-door{ transform:perspective(1200px) rotateY(100deg); }
+/* कार्ड */
+.card{
+    width:100%;
+    max-width:800px;
+    padding:70px 40px;
+    border-radius:30px;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+        url("https://www.transparenttextures.com/patterns/leather.png");
+    background-size: cover;
+    background-blend-mode: overlay;
+    border:1px solid rgba(212,175,55,0.25);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.8),
+        inset 0 0 20px rgba(0,0,0,0.6),
+        inset 0 2px 5px rgba(255,255,255,0.05);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.wedding-card,
+.dinner-card,
+.venue-card{
+    margin:auto;
+    max-width:400px;
+    padding:40px 30px;
+    border-radius:25px;
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+        url("https://www.transparenttextures.com/patterns/leather.png");
+    background-size: 300px;
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    border:1px solid rgba(212,175,55,0.3);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.7),
+        inset 0 0 25px rgba(0,0,0,0.7);
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.08), transparent 70%);
+    opacity:0.4;
+    pointer-events:none;
+}
+.card:hover{
+    transform: rotateX(6deg) rotateY(-6deg) scale(1.03);
+    box-shadow:
+        0 20px 80px rgba(0,0,0,0.7),
+        0 0 40px rgba(212,175,55,0.2);
+}
+.gold-border{
+    position:absolute;
+    inset:12px;
+    border:1px solid rgba(212,175,55,0.4);
+    border-radius:24px;
+    pointer-events:none;
+}
+/* अक्षररचना */
+.subtitle{
+    letter-spacing:0;
+    color:#d4af37;
+    margin-bottom:20px;
+    font-size:13px;
+}
+h1{
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    font-size:70px;
+    line-height:1.1;
+    margin-bottom:20px;
+    color:#f7e7c6;
+}
+.date{
+    margin-top:20px;
+    font-size:20px;
+    color:#ddd;
+}
+.invite-text{
+    max-width:600px;
+    margin:25px auto;
+    line-height:1.8;
+    color:#f7e7c6;
+    opacity:0.8;
+}
+/* बटण */
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    background:linear-gradient(to right,#d4af37,#f7e7c6);
+    color:#3b0d0d;
+    font-weight:600;
+    transition:0.4s;
+}
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+}
+/* जोडप्याचा फोटो */
+.couple{
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:40px;
+    position:relative;
+    z-index:2;
+    border:3px solid rgba(212,175,55,0.6);
+    box-shadow:
+        0 0 0 6px rgba(212,175,55,0.08),
+        0 0 40px rgba(212,175,55,0.35),
+        0 10px 40px rgba(0,0,0,0.6);
+    transition: all 0.4s ease;
+}
+.couple:hover{
+    transform: scale(1.05) rotateZ(1deg);
+    box-shadow:
+        0 0 0 8px rgba(212,175,55,0.12),
+        0 0 60px rgba(212,175,55,0.5),
+        0 20px 60px rgba(0,0,0,0.8);
+}
+.couple-wrap{
+    position:relative;
+    display:inline-block;
+}
+.couple-wrap::before{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    border-radius:50%;
+    background:conic-gradient(#d4af37, #f7e7c6, #d4af37, #b8962e, #d4af37);
+    filter:blur(1px);
+    z-index:0;
+    animation: rotateGold 8s linear infinite;
+}
+.couple-wrap::after{
+    content:"";
+    position:absolute;
+    inset:-6px;
+    border-radius:50%;
+    background:rgba(0,0,0,0.5);
+    z-index:1;
+}
+@keyframes rotateGold{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+}
+/* उपस्थिती कळवण्याचा विभाग */
+.rsvp-card{
+    margin:auto;
+    max-width:450px;
+    padding:40px 30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(212,175,55,0.3);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 30px rgba(212,175,55,0.2);
+    text-align:center;
+}
+.rsvp-text{
+    color:#ddd;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+.rsvp-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.rsvp-form input,
+.rsvp-form select{
+    width:100%;
+    padding:14px 16px;
+    border-radius:12px;
+    border:1px solid rgba(212,175,55,0.25);
+    background:rgba(0,0,0,0.35);
+    color:#f7e7c6;
+    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
+    outline:none;
+}
+.rsvp-form input::placeholder{
+    color:#aaa;
+}
+.rsvp-form select option{
+    background:#3b0d0d;
+    color:#f7e7c6;
+}
+.rsvp-submit{
+    border:none;
+    cursor:pointer;
+    font-family:'Poppins','Noto Sans Devanagari',sans-serif;
+    font-size:15px;
+}
+.rsvp-message{
+    margin-top:15px;
+    color:#d4af37;
+    font-size:14px;
+    display:none;
+}
+/* उलट गणना */
+.countdown{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.time-box{
+    width:110px;
+    padding:20px 10px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(212,175,55,0.2);
+}
+.time-box h2{
+    color:#f7e7c6;
+    font-size:28px;
+}
+.time-box span{
+    font-size:10px;
+    letter-spacing:0;
+    color:#ccc;
+}
+/* संगीत बटण */
+.music-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.45);
+    background:rgba(0,0,0,0.45);
+    color:#f7e7c6;
+    font-size:22px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    backdrop-filter:blur(10px);
+    cursor:pointer;
+    z-index:999;
+    transition:transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+.music-btn:hover{
+    transform:scale(1.08);
+}
+.music-btn.playing{
+    color:#f7e7c6;
+    animation:musicPulse 2s infinite;
+}
+@keyframes musicPulse{
+    0%   { box-shadow:0 0 0 0 rgba(212,175,55,0.45); }
+    70%  { box-shadow:0 0 0 14px rgba(212,175,55,0); }
+    100% { box-shadow:0 0 0 0 rgba(212,175,55,0); }
+}
+.music-btn.paused{
+    color:#8a6b2e;
+    opacity:0.75;
+}
+.music-btn.paused::after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:62%;
+    height:2px;
+    background:#d4af37;
+    border-radius:2px;
+    transform:translate(-50%,-50%) rotate(-45deg);
+}
+/* मोबाईलसाठी */
+@media(max-width:768px){
+    h1{ font-size:44px; }
+    .card{ padding:50px 20px; }
+    .couple{ width:170px; height:170px; }
+    .time-box{ width:90px; }
+}
+/* स्वागत स्क्रीन */
+#intro{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:#3b0d0d;
+}
+.intro-bg{
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle,#6e1c1c,#3b0d0d);
+}
+.intro-line{
+    position:absolute;
+    left:50%;
+    top:0;
+    width:2px;
+    height:100%;
+    background:linear-gradient(to bottom,#d4af37,transparent,#d4af37);
+    transform:translateX(-50%);
+}
+.intro-seal{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:linear-gradient(145deg,#6e1c1c,#3b0d0d);
+    border:1px solid rgba(212,175,55,0.5);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:
+        inset 6px 6px 12px rgba(0,0,0,0.6),
+        inset -6px -6px 12px rgba(255,215,120,0.15),
+        0 10px 30px rgba(0,0,0,0.7);
+    transition: all 0.4s ease;
+    z-index: 30;
+}
+.intro-seal:hover{
+    transform:translate(-50%,-50%) scale(1.08);
+}
+.intro-seal h1{
+    color:#e7d39b;
+    font-size:32px;
+    margin:0;
+}
+.intro-seal p{
+    color:#caa43b;
+    font-size:11px;
+    letter-spacing:0;
+    text-align:center;
+    padding:0 8px;
+}
+.open .intro-seal{
+    animation:sealZoom 0.8s forwards;
+}
+@keyframes sealZoom{
+    0%{ transform:translate(-50%,-50%) scale(1); }
+    100%{ transform:translate(-50%,-60%) scale(2); opacity:0; }
+}
+.open .intro-line{
+    animation:lineSplit 1s forwards;
+}
+@keyframes lineSplit{
+    0%{ transform:translateX(-50%) scaleY(1); opacity:1; }
+    100%{ transform:translateX(-50%) scaleY(0); opacity:0; }
+}
+.section{
+    padding:40px 20px;
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+/* वधू / वर */
+.bride-container,
+.groom-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+.bride-image,
+.groom-image{
+    flex:1;
+    max-width:400px;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 30px rgba(212,175,55,0.2);
+}
+.bride-image img,
+.groom-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.bride-text,
+.groom-text{
+    flex:1;
+    max-width:400px;
+    text-align:left;
+}
+/* विवाह विभाग */
+.wedding-card{
+    margin:auto;
+    max-width:400px;
+    padding:40px 30px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(212,175,55,0.3);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.6),
+        0 0 30px rgba(212,175,55,0.2);
+    text-align:center;
+}
+.wedding-date{
+    font-size:32px;
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    color:#f7e7c6;
+    margin-bottom:10px;
+}
+.wedding-day{
+    font-size:18px;
+    color:#d4af37;
+    margin-bottom:8px;
+}
+.wedding-time{
+    font-size:20px;
+    color:#ddd;
+}
+/* स्नेहभोजन */
+.dinner-card{
+    margin:auto;
+    max-width:400px;
+    padding:35px 30px;
+    border-radius:25px;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(212,175,55,0.2);
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.7),
+        inset 0 0 20px rgba(212,175,55,0.08);
+    text-align:center;
+}
+.dinner-date{
+    font-size:28px;
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    color:#f7e7c6;
+    margin-bottom:10px;
+}
+.dinner-time{
+    font-size:18px;
+    color:#d4af37;
+}
+/* कार्यस्थळ */
+.venue-section{
+    text-align:center;
+}
+.venue-card{
+    margin:auto;
+    max-width:450px;
+    padding:40px 30px;
+    border-radius:25px;
+    background-image: none;
+    background-size:cover;
+    background-position:center;
+    border:1px solid rgba(212,175,55,0.3);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.7),
+        0 0 30px rgba(212,175,55,0.2);
+    color:white;
+}
+.venue-name{
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    font-size:28px;
+    color:#f7e7c6;
+    margin-bottom:10px;
+}
+.venue-address{
+    color:#ddd;
+    margin-bottom:25px;
+}
+.venue-btn{
+    display:inline-block;
+    padding:12px 30px;
+    border-radius:50px;
+    text-decoration:none;
+    background:linear-gradient(to right,#d4af37,#f7e7c6);
+    color:#3b0d0d;
+    font-weight:600;
+    transition:0.3s;
+}
+.venue-btn:hover{
+    transform:translateY(-3px) scale(1.05);
+}
+/* शेवटचा विभाग */
+.final-section{
+    text-align:center;
+    padding-bottom:100px;
+}
+.premium-countdown{
+    margin-top:40px;
+    gap:25px;
+}
+.time-box{
+    position:relative;
+    overflow:hidden;
+}
+.time-box::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg, transparent, rgba(212,175,55,0.2), transparent);
+    transform:translateX(-100%);
+    animation:shimmer 3s infinite;
+}
+@keyframes shimmer{
+    100%{ transform:translateX(100%); }
+}
+.final-message{
+    margin-top:40px;
+    font-size:18px;
+    color:#ddd;
+    opacity:0.9;
+}
+.footer{
+    margin-top:30px;
+}
+.footer h3{
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    font-size:26px;
+    color:#f7e7c6;
+}
+.name{
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    font-size:40px;
+    color:#f7e7c6;
+    margin-bottom:15px;
+}
+.parents{
+    font-size:18px;
+    color:#ddd;
+    line-height:1.6;
+}
+.gold-title{
+    color:#d4af37;
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    font-size:28px;
+    margin-bottom:25px;
+}
+.message{
+    font-size:15px;
+    line-height:1.8;
+    color:#ddd;
+}
+.gallery-img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+.timeline div{
+    margin:25px 0;
+}
+.timeline h3{
+    color:#f7e7c6;
+}
+.timeline p{
+    color:#aaa;
+}
+/* स्क्रॅच कार्ड */
+.scratch-card{
+    position:relative;
+    width:100%;
+    max-width:520px;
+    height:230px;
+    margin:auto;
+    border-radius:24px;
+    overflow:hidden;
+    background: radial-gradient(circle at top left,#d4af37,#6e1c1c);
+    box-shadow:
+        0 0 40px rgba(212,175,55,0.15),
+        inset 0 0 30px rgba(255,255,255,0.15);
+}
+.hidden-text{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    z-index:1;
+}
+.invited{
+    color:#fff7d6;
+    font-size:18px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+    opacity:0.95;
+}
+.main-date{
+    font-size:42px;
+    color:#3b0d0d;
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    margin-bottom:10px;
+}
+.day{
+    color:#2f2410;
+    font-size:18px;
+    margin-bottom:6px;
+}
+.time{
+    color:#3b2c12;
+    font-size:15px;
+    opacity:0.8;
+}
+.scratch-card canvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:5;
+    touch-action:none;
+}
+.scratch-label{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:rgba(255,255,255,0.9);
+    font-size:24px;
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    z-index:6;
+    pointer-events:none;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+.blast{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+        rgba(255,215,120,0.8),
+        rgba(212,166,58,0.4),
+        transparent);
+    transform:translate(-50%,-50%) scale(0.5);
+    opacity:0;
+    pointer-events:none;
+    z-index:7;
+}
+.blast.active{
+    animation:premiumReveal 1.2s ease-out forwards;
+}
+@keyframes premiumReveal{
+    0%{ transform:translate(-50%,-50%) scale(0.5); opacity:0; }
+    30%{ opacity:0.9; }
+    60%{ transform:translate(-50%,-50%) scale(2.5); opacity:0.6; }
+    100%{ transform:translate(-50%,-50%) scale(3); opacity:0; }
+}
+/* फोटो स्लाइडर (सुधारित) */
+.carousel-wrapper{
+    position:relative;
+    max-width:720px;
+    margin:auto;
+    padding:0 10px;
+}
+.carousel{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    border:1px solid rgba(212,175,55,0.35);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.75),
+        0 0 30px rgba(212,175,55,0.15);
+    background:#1a0505;
+}
+.carousel-track{
+    display:flex;
+    transition:transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+.carousel-track img{
+    width:100%;
+    flex-shrink:0;
+    aspect-ratio: 3 / 4;
+    object-fit:cover;
+    display:block;
+    user-select:none;
+    -webkit-user-drag:none;
+}
+/* पुढे-मागे जाण्याची बटणे */
+.carousel-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid rgba(212,175,55,0.55);
+    background:rgba(0,0,0,0.55);
+    color:#f7e7c6;
+    font-size:20px;
+    line-height:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    z-index:10;
+    backdrop-filter:blur(6px);
+    transition:background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.carousel-btn:hover{
+    background:rgba(212,175,55,0.25);
+    color:#fff;
+    transform:translateY(-50%) scale(1.1);
+}
+.carousel-btn:active{
+    transform:translateY(-50%) scale(0.95);
+}
+.prev-btn{ left:12px; }
+.next-btn{ right:12px; }
+/* स्लाइड दर्शवणारे ठिपके */
+.carousel-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+}
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:rgba(212,175,55,0.3);
+    cursor:pointer;
+    transition:background 0.3s ease, transform 0.3s ease;
+}
+.dot:hover{
+    background:rgba(212,175,55,0.6);
+}
+.dot.active{
+    background:#d4af37;
+    transform:scale(1.3);
+    box-shadow:0 0 10px rgba(212,175,55,0.6);
+}
+/* मोबाईलसाठी */
+@media(max-width:768px){
+    .carousel-wrapper{
+        max-width:100%;
+        padding:0 5px;
+    }
+    .carousel-btn{
+        width:36px;
+        height:36px;
+        font-size:16px;
+    }
+    .prev-btn{ left:6px; }
+    .next-btn{ right:6px; }
+    .carousel-track img{
+        aspect-ratio: 3 / 4;
+    }
+}
+/* स्क्रोल अॅनिमेशन */
+.section{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+.section.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+.section > *{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+.section.show > *{
+    opacity: 1;
+    transform: translateY(0);
+}
+.section.show > *:nth-child(1){ transition-delay: 0.2s; }
+.section.show > *:nth-child(2){ transition-delay: 0.4s; }
+.section.show > *:nth-child(3){ transition-delay: 0.6s; }
+.seal-popup{
+    position:absolute;
+    bottom:-45px;
+    left:50%;
+    transform:translateX(-50%) translateY(10px);
+    background:rgba(0,0,0,0.8);
+    color:#f7e7c6;
+    font-size:12px;
+    padding:6px 14px;
+    border-radius:20px;
+    opacity:0;
+    pointer-events:none;
+    transition:all 0.3s ease;
+}
+.intro-seal:hover .seal-popup{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+}
+/* मोबाईलसाठी कार्यक्षमता */
+@media (max-width: 768px){
+    .glow{
+        filter: blur(60px);
+        width: 400px;
+        height: 400px;
+    }
+    .card:hover{
+        transform: none;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .particles span{
+        animation-duration: 15s;
+        opacity: 0.4;
+    }
+    .hero{ min-height: 70vh; }
+    h1{ font-size: 36px; }
+    .invite-text{ font-size: 15px; line-height: 1.6; }
+    .rsvp-card{ padding:35px 20px; }
+    .countdown{ gap: 10px; }
+    .time-box{
+        width: 70px;
+        padding: 12px 5px;
+    }
+    .time-box h2{ font-size: 22px; }
+    .scratch-card{ height: 180px; }
+    .btn{ padding: 12px 28px; font-size: 14px; }
+    .music-btn{
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+button, .btn, .nav, .intro-seal, .carousel-btn {
+    touch-action: manipulation;
+    outline: none;
+}
+.intro-seal,
+.intro-seal * {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+.intro-seal:focus,
+.intro-seal:active {
+    outline: none;
+    box-shadow: none;
+}
+.couple-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    padding-bottom:30px;
+    z-index:2;
+    text-align:center;
+}
+.couple-overlay h1{
+    font-family:'Cinzel','Noto Sans Devanagari',serif;
+    font-size:70px;
+    color:#f7e7c6;
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.9),
+        0 0 20px rgba(212,175,55,0.6);
+    letter-spacing:0;
+    margin:0;
+}
+@media(max-width:768px){
+    .couple-overlay{ padding-bottom:20px; }
+    .couple-overlay h1{ font-size:38px; }
+}
+</style>
+</head>
+<body>
+<!-- पार्श्वसंगीत -->
+<audio id="bgMusic" src="audio/music1.mp3" loop preload="auto"></audio>
+<!-- स्वागत स्क्रीन -->
+<div id="intro">
+    <div class="intro-bg"></div>
+    <div class="intro-line"></div>
+    <div class="door-wrap" id="doors">
+        <div class="door left-door"></div>
+        <div class="door right-door"></div>
+    </div>
+    <div class="intro-seal" onclick="openInvite()">
+        <h1>R &amp; S</h1>
+        <p>उघडण्यासाठी स्पर्श करा</p>
+    </div>
+</div>
+<div class="bg">
+    <div class="glow"></div>
+</div>
+<div class="particles" id="particles"></div>
+<button class="music-btn paused" id="musicBtn" aria-label="संगीत सुरू करा">♫</button>
+<section class="hero section" id="mainContent">
+    <div class="hero-text">
+        <p class="subtitle">कुटुंबीयांच्या उपस्थितीत</p>
+    </div>
+    <div class="hero-image">
+        <img src="Assets/couple1.png" alt="राम आणि सीता यांचा फोटो">
+        <div class="couple-overlay">
+            <h1>राम आणि सीता</h1>
+        </div>
+    </div>
+</section>
+<!-- स्वागत संदेश -->
+<section class="section">
+    <p class="message">
+        राम आणि सीता यांच्या विवाहसोहळ्याला आपले मनःपूर्वक स्वागत आहे.
+        त्यांच्या नव्या आयुष्याच्या सुंदर सुरुवातीला तुम्ही सहभागी होत आहात, याचा आम्हाला आनंद आहे.
+        या आनंदाच्या क्षणी आमच्यासोबत असल्याबद्दल मनापासून धन्यवाद. ❤️
+    </p>
+</section>
+<!-- विवाह -->
+<section class="section wedding-section">
+    <h2 class="gold-title">विवाहसोहळा</h2>
+    <div class="wedding-card">
+        <p class="wedding-date">३० जून २०२७</p>
+        <p class="wedding-day">बुधवार</p>
+        <p class="wedding-time">सकाळी १०:००</p>
+    </div>
+</section>
+<!-- स्नेहभोजन -->
+<section class="section dinner-section">
+    <h2 class="gold-title">स्नेहभोजन</h2>
+    <div class="dinner-card">
+        <p class="dinner-date">३० जून २०२७</p>
+        <p class="dinner-time">सायंकाळी ७:३० पासून</p>
+    </div>
+</section>
+<!-- कार्यस्थळ -->
+<section class="section venue-section">
+    <h2 class="gold-title">कार्यस्थळ</h2>
+    <div class="venue-card">
+        <h3 class="venue-name">ताज महाल पॅलेस</h3>
+        <p class="venue-address">मुंबई, भारत</p>
+        <a href="#" class="venue-btn">ठिकाणाचा नकाशा पहा</a>
+    </div>
+</section>
+<!-- फोटो गॅलरी विभाग -->
+<section class="section gallery-section">
+    <h2 class="gold-title">आमच्या सुंदर आठवणी</h2>
+    <div class="carousel-wrapper">
+        <div class="carousel">
+            <div class="carousel-track" id="carouselTrack">
+                <img src="Assets/gallery1.png" alt="आठवणींचा फोटो १">
+                <img src="Assets/gallery2.png" alt="आठवणींचा फोटो २">
+                <img src="Assets/gallery3.png" alt="आठवणींचा फोटो ३">
+                <img src="Assets/gallery4.png" alt="आठवणींचा फोटो ४">
+                <!-- सलग स्लाइडसाठी पहिल्या फोटोची प्रत -->
+                <img src="Assets/gallery1.png" alt="आठवणींचा फोटो १ (पुन्हा)">
+            </div>
+        </div>
+        <button class="carousel-btn prev-btn" id="prevBtn" aria-label="मागील फोटो">&#10094;</button>
+        <button class="carousel-btn next-btn" id="nextBtn" aria-label="पुढील फोटो">&#10095;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+</section>
+<!-- उपस्थिती कळवणे -->
+<section class="section rsvp-section">
+    <h2 class="gold-title">आपली उपस्थिती कळवा</h2>
+    <div class="rsvp-card">
+        <p class="rsvp-text">
+            आमच्या या खास दिवशी तुम्ही आमच्यासोबत आनंद साजरा करण्यासाठी येणार आहात का, ते कृपया कळवा.
+        </p>
+        <form class="rsvp-form" onsubmit="submitRSVP(event)">
+            <input type="text" id="rsvpName" placeholder="तुमचे नाव" required>
+            <select id="rsvpAttendance" required>
+                <option value="" disabled selected>तुम्ही उपस्थित राहणार आहात का?</option>
+                <option value="हो, मी उपस्थित राहीन">हो, मी उपस्थित राहीन</option>
+                <option value="माफ करा, मला उपस्थित राहता येणार नाही">माफ करा, मला उपस्थित राहता येणार नाही</option>
+            </select>
+            <input type="number" id="rsvpGuests" min="1" max="20" placeholder="एकूण पाहुण्यांची संख्या" required>
+            <button type="submit" class="btn rsvp-submit">उपस्थिती निश्चित करा</button>
+        </form>
+        <p class="rsvp-message" id="rsvpMessage"></p>
+    </div>
+</section>
+<!-- उलट गणना -->
+<section class="section final-section">
+    <h2 class="gold-title">आपल्या खास दिवसासाठी उरलेला वेळ</h2>
+    <div class="countdown premium-countdown">
+        <div class="time-box">
+            <h2 id="days">00</h2>
+            <span>दिवस</span>
+        </div>
+        <div class="time-box">
+            <h2 id="hours">00</h2>
+            <span>तास</span>
+        </div>
+        <div class="time-box">
+            <h2 id="minutes">00</h2>
+            <span>मिनिटे</span>
+        </div>
+        <div class="time-box">
+            <h2 id="seconds">00</h2>
+            <span>सेकंद</span>
+        </div>
+    </div>
+    <p class="final-message">
+        हा सुंदर दिवस तुमच्यासोबत साजरा करण्यासाठी आम्ही आतुरतेने वाट पाहत आहोत. ❤️
+    </p>
+    <div class="footer">
+        <p>स्नेहपूर्वक,</p>
+        <h3>राम आणि सीता</h3>
+    </div>
+</section>
+<script>
+/* =========================================================
+   १. संगीत नियंत्रण
+   ========================================================= */
+const bgMusic  = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+let musicWanted = false;
+bgMusic.volume = 0.6;
+function updateMusicBtn(){
+    const isPlaying = !bgMusic.paused && !bgMusic.ended;
+    musicBtn.classList.toggle("playing", isPlaying);
+    musicBtn.classList.toggle("paused", !isPlaying);
+    musicBtn.setAttribute("aria-label", isPlaying ? "संगीत थांबवा" : "संगीत सुरू करा");
+}
+function playMusic(){
+    musicWanted = true;
+    const promise = bgMusic.play();
+    if (promise !== undefined && typeof promise.then === "function"){
+        promise
+            .then(updateMusicBtn)
+            .catch(() => {
+                updateMusicBtn();
+                document.addEventListener("pointerdown", retryMusic, { once:true });
+                document.addEventListener("keydown", retryMusic, { once:true });
+            });
+    } else {
+        updateMusicBtn();
+    }
+}
+function retryMusic(){
+    if (musicWanted && bgMusic.paused){
+        playMusic();
+    }
+}
+function pauseMusic(){
+    musicWanted = false;
+    bgMusic.pause();
+    updateMusicBtn();
+}
+musicBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    if (bgMusic.paused || bgMusic.ended){
+        playMusic();
+    } else {
+        pauseMusic();
+    }
+});
+bgMusic.addEventListener("play",  updateMusicBtn);
+bgMusic.addEventListener("pause", updateMusicBtn);
+bgMusic.addEventListener("ended", updateMusicBtn);
+bgMusic.addEventListener("error", () => {
+    console.warn("संगीताची फाईल सापडली नाही → audio/music1.mp3");
+    musicBtn.classList.remove("playing");
+    musicBtn.classList.add("paused");
+});
+/* =========================================================
+   २. उपस्थिती नोंद
+   ========================================================= */
+function submitRSVP(event){
+    event.preventDefault();
+    const name = document.getElementById("rsvpName").value.trim();
+    const attendance = document.getElementById("rsvpAttendance").value;
+    const guests = document.getElementById("rsvpGuests").value;
+    const message = document.getElementById("rsvpMessage");
+    if(!name || !attendance || !guests) return;
+    message.textContent = `धन्यवाद, ${name}! तुमची उपस्थिती नोंदवली आहे.`;
+    message.style.display = "block";
+    event.target.reset();
+}
+/* =========================================================
+   ३. स्वागत स्क्रीन / प्रवेशद्वार उघडणे
+   ========================================================= */
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+});
+function openInvite(){
+    playMusic();
+    document.body.classList.add("open");
+    setTimeout(()=>{
+        const intro = document.getElementById("intro");
+        intro.style.pointerEvents = "none";
+        intro.style.transition = "opacity 0.8s ease";
+        intro.style.opacity = "0";
+        document.getElementById("mainContent").style.display = "flex";
+        setTimeout(()=>{
+            if(typeof observer !== "undefined"){
+                document.querySelectorAll(".section").forEach(section=>{
+                    observer.observe(section);
+                });
+            }
+            checkInitialSections();
+        },100);
+        setTimeout(()=>{
+            intro.style.display = "none";
+        },800);
+    },2000);
+}
+function checkInitialSections() {
+    const triggerBottom = window.innerHeight * 0.9;
+    document.querySelectorAll(".section").forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+            section.classList.add("show");
+        }
+    });
+}
+/* =========================================================
+   ४. सोनेरी कण
+   ========================================================= */
+const particles = document.getElementById("particles");
+for(let i=0;i<60;i++){
+    let span = document.createElement("span");
+    span.style.left = Math.random()*100 + "%";
+    span.style.animationDuration = (5 + Math.random()*10) + "s";
+    span.style.opacity = Math.random();
+    particles.appendChild(span);
+}
+/* =========================================================
+   ५. उलट गणना
+   ========================================================= */
+const targetDate = new Date(2027, 5, 30, 10, 0, 0).getTime();
+setInterval(()=>{
+    const now = new Date().getTime();
+    const gap = Math.max(0, targetDate - now);
+    const days    = Math.floor(gap / (1000*60*60*24));
+    const hours   = Math.floor((gap % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((gap % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((gap % (1000*60)) / 1000);
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+},1000);
+/* =========================================================
+   ६. पॅरॅलॅक्स परिणाम (सुरक्षित तपासणी)
+   ========================================================= */
+const parallaxCard = document.querySelector(".card");
+if(window.innerWidth > 768 && parallaxCard){
+    window.addEventListener("scroll",()=>{
+        const scrolled = window.scrollY;
+        parallaxCard.style.transform = `translateY(${scrolled * -0.05}px)`;
+    });
+}
+/* =========================================================
+   ७. बटणांसह सुधारित फोटो स्लाइडर
+   ========================================================= */
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+};
+const track = document.getElementById("carouselTrack");
+const slides = track ? track.querySelectorAll("img") : [];
+const totalRealSlides = slides.length > 0 ? slides.length - 1 : 0;
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const dotsContainer = document.getElementById("carouselDots");
+let currentIndex = 0;
+let isTransitioning = false;
+let autoPlayInterval = null;
+let dots = [];
+/* स्लाइड दर्शवणारे ठिपके तयार करा */
+if (dotsContainer && totalRealSlides > 0) {
+    for (let i = 0; i < totalRealSlides; i++) {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+            if (isTransitioning) return;
+            goToSlide(i);
+            resetAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+    }
+    dots = dotsContainer.querySelectorAll(".dot");
+}
+function updateDots() {
+    dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentIndex);
+    });
+}
+function goToSlide(index) {
+    if (!track || slides.length === 0) return;
+    isTransitioning = true;
+    currentIndex = index;
+    track.style.transition = "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    if (currentIndex === totalRealSlides) {
+        // शेवटच्या प्रतिकृतीपर्यंत पोहोचल्यानंतर खऱ्या पहिल्या फोटोवर जा
+        setTimeout(() => {
+            track.style.transition = "none";
+            currentIndex = 0;
+            track.style.transform = `translateX(0%)`;
+            updateDots();
+            isTransitioning = false;
+        }, 600);
+    } else {
+        setTimeout(() => { isTransitioning = false; }, 600);
+    }
+    updateDots();
+}
+function nextSlide() {
+    if (isTransitioning) return;
+    goToSlide(currentIndex + 1);
+}
+function prevSlide() {
+    if (isTransitioning) return;
+    if (currentIndex === 0) {
+        // शेवटच्या प्रतिकृतीवर लगेच जा आणि नंतर शेवटच्या मूळ फोटोवर जा
+        track.style.transition = "none";
+        currentIndex = totalRealSlides;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        // बदल लगेच लागू करण्यासाठी रिफ्लो करा
+        void track.offsetHeight;
+        // शेवटच्या मूळ फोटोपर्यंत अॅनिमेशन करा
+        goToSlide(totalRealSlides - 1);
+    } else {
+        goToSlide(currentIndex - 1);
+    }
+}
+/* बटणांद्वारे फोटो बदला */
+if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); resetAutoPlay(); });
+if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); resetAutoPlay(); });
+/* फोटो आपोआप बदला */
+function startAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(nextSlide, 5000);
+}
+function resetAutoPlay() {
+    clearInterval(autoPlayInterval);
+    startAutoPlay();
+}
+if (track && slides.length > 1) {
+    startAutoPlay();
+    /* माऊस ठेवल्यावर स्लाइड थांबवा */
+    const carouselWrapper = document.querySelector(".carousel-wrapper");
+    if (carouselWrapper) {
+        carouselWrapper.addEventListener("mouseenter", () => clearInterval(autoPlayInterval));
+        carouselWrapper.addEventListener("mouseleave", startAutoPlay);
+    }
+    /* स्पर्श करून फोटो बदलण्याची सुविधा */
+    let touchStartX = 0;
+    let touchEndX = 0;
+    track.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoPlayInterval);
+    }, { passive: true });
+    track.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+        startAutoPlay();
+    }, { passive: true });
+}
+/* =========================================================
+   ८. स्क्रोल केल्यावर विभाग दाखवणे
+   ========================================================= */
+const sections = document.querySelectorAll(".section");
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+        }
+    });
+},{
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+});
+sections.forEach(section => {
+    observer.observe(section);
+});
+/* =========================================================
+   ९. 3D टिल्ट (फक्त .card घटक उपलब्ध असल्यास)
+   ========================================================= */
+const tiltCard = document.querySelector(".card");
+if(tiltCard){
+    function handleMove(e){
+        const rect = tiltCard.getBoundingClientRect();
+        const x = (e.clientX || e.touches[0].clientX) - rect.left;
+        const y = (e.clientY || e.touches[0].clientY) - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = -(y - centerY) / 20;
+        const rotateY = (x - centerX) / 20;
+        tiltCard.style.transform =
+            `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+    }
+    tiltCard.addEventListener("mousemove", handleMove);
+    tiltCard.addEventListener("mouseleave", ()=>{
+        tiltCard.style.transform = "rotateX(0) rotateY(0) scale(1)";
+    });
+    tiltCard.addEventListener("touchend", ()=>{
+        tiltCard.style.transform = "rotateX(0) rotateY(0) scale(1)";
+    });
+}
+</script>
+</body>
+</html>
